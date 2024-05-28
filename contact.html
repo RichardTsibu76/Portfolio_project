@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Details</title>
+  <style>
+    body {
+      
+      font-family: Arial, sans-serif;
+      background-color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    form {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: 300px;
+    }
+    label {
+      font-weight: bold;
+      margin-top: 10px;
+      display: block;
+    }
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      width: calc(100% - 20px);
+      padding: 10px;
+      margin-top: 5px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    textarea {
+      height: 100px;
+      resize: vertical;
+    }
+    input[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+    .spinner {
+      display: none;
+      margin-top: 10px;
+    }
+    .message {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    .about {
+      text-align: center;
+      color: white;
+      display: block;
+      font-display: block;
+      background-color: #333;
+      text-transform:none;
+    }
+   
+  </style>
+</head>
+<body>
+<div class="about">
+  <h1>PLEASE WELCOME TO PASTOR RICHARD'S CHURCH  </h1>
+  <h3>Kindly fill the form you see here and we will contact you as soon as possible</h3>
+  <p>We are a ministry commited to helping people who have genuine passion for the work of the ministry and also people who are really have clear pertinent to the kingdom </p>
+  <span>|make sure to include the date|</span>
+</div>
+    <div>
+  <form id="contactForm">
+    <label for="fname">FIRST NAME:</label>
+    <input type="text" id="fname" name="fname">
+    <label for="lname">LAST NAME:</label>
+    <input type="text" id="lname" name="lname">
+    <label for="email">EMAIL:</label>
+    <input type="email" id="email" name="email">
+    <label for="message">MESSAGE:</label>
+    <textarea id="message" name="message"></textarea>
+    <input type="submit" value="Submit">
+    <div class="spinner" id="spinner">Submitting...</div>
+    <div class="message" id="message"></div>
+
+  </form><br>
+  <p>
+    <label for="date">date: </label>
+    <input id="date" name="date" type="datetime-local" />
+  </p>
+  </div>
+
+  <script>
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      // Get form values
+      const fname = document.getElementById('fname').value.trim();
+      const lname = document.getElementById('lname').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+      const spinner = document.getElementById('spinner');
+      const messageBox = document.getElementById('message');
+
+      // Reset messages
+      messageBox.textContent = '';
+      spinner.style.display = 'none';
+
+      // Basic validation
+      if (!fname || !lname || !email || !message) {
+        messageBox.textContent = 'All fields are required!';
+        messageBox.style.color = 'black';
+        return;
+      }
+
+      // Email validation
+      const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+      if (!emailPattern.test(email)) {
+        messageBox.textContent = 'Please enter a valid email address!';
+        messageBox.style.color = 'red';
+        return;
+      }
+
+      // Show spinner
+      spinner.style.display = 'block';
+
+      // Mock AJAX request
+      setTimeout(() => {
+        spinner.style.display = 'none';
+        messageBox.textContent = 'Form submitted successfully!\nThank you! ';
+        messageBox.style.color = 'green';
+
+        // Reset form fields
+        document.getElementById('contactForm').reset();
+      }, 2000);
+    });
+  </script>
+</body>
+</html>
