@@ -7,6 +7,30 @@ body {
   flex-direction: column;
   min-height: 100vh;
 }
+nav ul
+{
+  background-color: rgb(238, 130, 191);
+  color: white;
+   text-align: center;
+}
+h1 {
+  animation-duration: 2s;
+  animation-name: slidein;
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 300%;
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+
+
 
 .search-container, nav, .church-info, {
   padding: 20px;
@@ -19,9 +43,10 @@ nav ul {
   justify-content: space-around;
   transition: all .6s ease;
 }
+
 nav ul a:hover{
   color: var(--other-color);
-  transform: translateY(-5px);
+  transform: ranslateY(-5px);
 
 }
 
@@ -39,6 +64,7 @@ nav ul li a {
 nav ul li a:hover {
   text-decoration: underline;
   font-weight: 500px;
+  color:aliceblue;
 }
 
 .church-info {
