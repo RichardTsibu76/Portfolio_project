@@ -1,21 +1,18 @@
-This is the readme file for the portfolio project . Building a website for a church that incoporates backend and frontend, using html, css , python flask (framework for deployement), javascript for interactiveness ,  JQUERY and other tools.
+This is the REAME.md for the portfolio project i made
 
-The project builds a church website which uses the database with the database managment system such mysql
-Javascript for interactivity with it's native framework such as JQUERY, react and python for deployments.
+AUTHOR/DEVELOPER: Richard Tsibu Darkoh
 
+Email: paakwesi5976@gmail.com
 
+						Name of the project
+			
+				CHANGE WEBSITE FOR THE LESS PRIVILEDGED MEMBERS AND THE COMMUNITY
 
+Technologies Used:
 
+Css,  Html , and Javascript
 
+I decided not to use any framework because i wanted to solidy my understanding with javascript
+before moving on with framworks
 
-
-
-
-
-
-
-
-
-This is portfolio project built by:
-Richard Tsibu Darkoh [Email: paakwesi5976@gmail.com]
 
